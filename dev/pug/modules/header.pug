@@ -1,0 +1,26 @@
+header.main-header
+	.container.main-header__wrapper
+		.main-logo
+			a(href="index.html")
+				+icon("logo")
+
+		.main-lang
+			a.main-lang__link.active(href="#") ru
+			a.main-lang__link(href="#") en
+
+		nav.main-nav
+			ul.main-nav__list
+				each link,title in nav.navPages
+					li.main-nav__item
+						a.main-nav__link(href=link)= title
+
+		.main-contacts
+			.main-contacts__messangers
+				span.main-contacts__text Online now
+				a.main-contacts__link.main-contacts__link--viber(href="#") Viber
+				a.main-contacts__link.main-contacts__link--whatsapp(href="#") Whatsapp
+			.main-contacts__phone
+				a.main-contacts__phone-link(href="tel:+38(067)1234567")
+					| +38 (067)
+					span &nbsp; 12-34-567
+				a.main-contacts__phone-callback(href="#") Вам перезвонить?

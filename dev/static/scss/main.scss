@@ -1,0 +1,362 @@
+@import "libs";
+@import "vars";
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,600,700');
+@import "fonts";
+
+// Common styles
+body {
+	position: relative;
+	font-family: $Montserrat;
+	font-size: 14px;
+	line-height: 1.43;
+}
+
+.container {
+	position: relative;
+	width: 100%;
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+
+// Main header
+.main-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 20;
+	width: 100%;
+	&__wrapper {
+		display: flex;
+		align-items: center;
+	}
+
+	.main-logo {
+		margin-right: 21px;
+		.icon-logo {
+			width: 79px;
+			height: 32px;
+			fill: white;
+			transition: all .25s ease-in-out;
+
+			&:hover,
+			&:active,
+			&.active {
+				fill: $cyan;
+			}
+		}
+	}
+
+	.main-lang {
+		margin-right: 32px;
+		&__link {
+			padding: 2px 4px;
+			color: white;
+			font-size: 10px;
+			font-weight: 600;
+			text-transform: uppercase;
+			text-decoration: none;
+			transition: all .25s ease-in-out;
+			opacity: .9;
+
+			&:hover,
+			&:active,
+			&.active {
+				color: $cyan;
+			}
+		}
+	}
+
+	.main-nav {
+		&__list {
+			display: flex;
+			align-items: center;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		&__link {
+			position: relative;
+			display: block;
+			padding: 52px 25px;
+			color: white;
+			font-size: 12px;
+			font-weight: 700;
+			text-transform: uppercase;
+			text-decoration: none;
+			transition: all .25s ease-in-out;
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 50%;
+				display: block;
+				width: 1px;
+				height: 0;
+				margin-left: -0.5px;
+				background-color: $cyan;
+				transition: height .25s ease-in-out;
+			}
+
+			&:hover,
+			&:active,
+			&.active {
+				color: $cyan;
+				&::before {
+					height: 35px;
+				}
+			}
+		}
+	}
+
+	.main-contacts {
+		margin-left: auto;
+		text-align: right;
+		&__messangers {
+			margin-bottom: 10px;
+		}
+		&__text {
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 11px;
+			color: white;
+			font-size: 8px;
+			font-weight: 400;
+			text-transform: uppercase;
+			opacity: 0.5;
+		}
+		&__link {
+			position: relative;
+			margin-right: 10px;
+			padding-left: 12px;
+			color: white;
+			font-size: 12px;
+			font-weight: 400;
+			text-decoration: none;
+			transition: all .25s ease-in-out;
+			&:last-child {
+				margin-right: 0;
+			}
+			&::before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 0;
+				display: block;
+				width: 7px;
+				height: 7px;
+				margin-top: -3.5px;
+				border-radius: 50%;
+				transition: all .25s ease-in-out;
+			}
+			&--viber::before {
+				background-color: $purple;
+				box-shadow: 0 2px 4px rgba(102, 92, 172, 0.5);
+			}
+			&--whatsapp::before {
+				background-color: $green;
+				box-shadow: 0 2px 4px rgba(43, 183, 65, 0.5);
+			}
+
+			&:hover,
+			&:active,
+			&.active {
+				color: $cyan;
+				&::before {
+					box-shadow: none;
+				}
+			}
+		}
+		&__phone {
+			&-link {
+				display: block;
+				color: white;
+				font-size: 18px;
+				font-weight: 400;
+				text-decoration: none;
+				transition: all .25s ease-in-out;
+				span {
+					font-weight: 700;
+				}
+
+				&:hover,
+				&:active,
+				&.active {
+					color: $cyan;
+				}
+			}
+			&-callback {
+				color: $cyan;
+				font-size: 12px;
+				font-weight: 400;
+
+				&:hover,
+				&:active,
+				&.active {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+
+// Section "Hero"
+.sect-hero {
+	height: calc(100vh - 168px);
+	padding-top: 168px;
+	background: $main-bg url("../img/general/main-bg.jpg") no-repeat center;
+	background-size: cover;
+}
+
+.hero-content {
+	position: relative;
+	max-width: 50%;
+	padding-left: 100px;
+	&__weather {
+		color: white;
+		opacity: .5;
+		p {
+			margin: 0;
+			font-family: $BebasNeue-Regular;
+			font-size: 20px;
+		}
+		span {
+			font-family: $BebasNeue-Light;
+			font-size: 26px;
+		}
+		sup {
+			top: -0.15em;
+		}
+		img {
+			//display: inline-block;
+			//vertical-align: middle;
+			margin: 0 10px;
+			width: 23px;
+			height: 22px;
+		}
+	}
+
+	&__title {
+		position: relative;
+		z-index: 15;
+		margin: 25px 0 0;
+		color: white;
+		font-family: $BebasNeue-Bold;
+		font-size: 140px;
+		line-height: 115px;
+		opacity: .9;
+	}
+
+	&__subtitle {
+		position: relative;
+		z-index: 5;
+		margin: 0 0 25px;
+		color: white;
+		font-family: $BebasNeue-Bold;
+		font-size: 90px;
+		line-height: 1;
+		opacity: .8;
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			display: block;
+			width: 100px;
+			height: 100px;
+			background-image: radial-gradient(circle 50px at 630% 410%, #000000 0%, rgba(0, 0, 0, 0) 100%);
+			opacity: 0.78;
+		}
+	}
+
+	&__descr {
+		margin-bottom: 60px;
+		color: white;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 23px;
+	}
+
+	&__watch {
+		position: relative;
+		z-index: 1;
+		&-link {
+			color: $cyan;
+			font-family: $BebasNeue-Regular;
+			font-size: 20px;
+			text-decoration: none;
+			transition: all .25s ease-in-out;
+
+			&:hover,
+			&:active,
+			&.active {
+				color: white;
+
+				.icon-play {
+					fill: white;
+				}
+			}
+		}
+		.icon-play {
+			display: inline-block;
+			vertical-align: text-top;
+			margin-right: 10px;
+			width: 20px;
+			height: 22px;
+			fill: $cyan;
+			transition: all .25s ease-in-out;
+		}
+
+		.circle {
+			position: absolute;
+			z-index: -1;
+			top: -29px;
+			left: -32px;
+			width: 80px;
+			height: 80px;
+			border: 1px solid white;
+			border-radius: 50%;
+			opacity: 0;
+
+			&.delay1 {
+				animation: waves 2.5s linear infinite;
+			}
+			&.delay2 {
+				animation: waves 2.5s linear .7s forwards infinite;
+			}
+			&.delay3 {
+				animation: waves 2.5s linear 1.3s forwards infinite;
+			}
+		}
+	}
+}
+
+.hero-copter {
+	position: absolute;
+	z-index: 10;
+	top: -7em;
+	left: 33em;
+
+	&__wrapper {
+		position: relative;
+		max-width: 633px;
+	}
+}
+
+
+// Animations
+@keyframes waves {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	100% {
+		transform: scale(2.1);
+		opacity: 0;
+	}
+}
